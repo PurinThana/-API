@@ -13,7 +13,7 @@ const prisma = new PrismaClient();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173", // URL ของ React app ที่จะเชื่อมต่อ
+        origin: "https://www.auctionmnp.com/", // URL ของ React app ที่จะเชื่อมต่อ
         methods: ["GET", "POST"],
         allowedHeaders: ["my-custom-header"],
         credentials: true
