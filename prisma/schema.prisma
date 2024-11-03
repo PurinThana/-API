@@ -1,0 +1,82 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// Prisma Schema
+// Prisma Schema
+enum AuctionStatus {
+  active
+  semi_inactive
+  inactive
+}
+
+model Auction {
+  id              Int           @id @default(autoincrement())
+  name            String
+  description     String?
+  code            String        @unique @db.Char(6)
+  opening_price   Float
+  current_price   Float?
+  round           Int?
+  mode            String?
+  time            String?
+  action_btn      String?
+  min_bid        Float?
+  logs            Log[]         @relation("AuctionLogs") // Define this relation
+  userAuctions    UserAuction[]  // Relation to UserAuction
+
+}
+
+model User {
+  id            Int             @id @default(autoincrement())
+  username      String          @unique
+  name          String?
+  organization  String?
+  role          String?
+  position      String?
+  password      String
+  userAuctions  UserAuction[]    // Relation to UserAuction
+   logs          Log[]
+}
+
+model UserAuction {
+  id         Int     @id @default(autoincrement())
+  user_id    Int
+  socket_id  String?
+  accepted   Boolean @default(false)
+  status     AuctionStatus? // Use the enum type
+  guest      Boolean @default(false)
+  bid        Float?
+  auction    Auction @relation(fields: [auction_id], references: [id])
+  auction_id Int
+  user       User    @relation(fields: [user_id], references: [id])
+
+  // New fields with default values
+  bidded     Boolean @default(false)
+  isAllowed  Boolean @default(false)
+
+  @@unique([user_id, auction_id]) // Composite unique constraint
+}
+
+
+model Log {
+  id          Int       @id @default(autoincrement())
+  auction_id  Int?      // Optional if not every log is related to an auction
+  user_id     Int?      // Foreign key to relate logs with a user
+  message     String?
+  time        BigInt?
+  createdAt   DateTime  @default(now()) // Automatically set timestamp when a log is created
+  auction     Auction?  @relation("AuctionLogs", fields: [auction_id], references: [id], onDelete: Cascade)
+  user        User?     @relation(fields: [user_id], references: [id], onDelete: SetNull) // Define relation with User model
+}
+
+
+// Add any additional models you have here...

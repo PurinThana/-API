@@ -1,0 +1,170 @@
+[
+  {
+    "username": "atmnp01",
+    "password": "pass657",
+    "name": "คุณพิพัฒน์ ชื่นใจ ",
+    "organization": "วิศวกรควบคุมและที่ปรึกษา เหมืองหินในจังหวัดเชียงใหม่",
+    "role": "user",
+    "position": "วิศวกรควบคุมและที่ปรึกษา"
+  },
+  {
+    "username": "atmnp02",
+    "password": "pass58",
+    "name": "คุณณัฐฐ์จิร  จงสุขธนามณี",
+    "organization": "เชียงราย SSP",
+    "role": "user",
+    "position": "กรรมการผู้จัดการ"
+  },
+  {
+    "username": "atmnp03",
+    "password": "pass64",
+    "name": "คุณโกสุม อยู่คง",
+    "organization": "สมาคมอุสาหกรรมย่อยหินไทย",
+    "role": "user",
+    "position": "เลขาธิการสมาคมย่อยหินไทย"
+  },
+  {
+    "username": "atmnp04",
+    "password": "pass79",
+    "name": "คุณสุรพล อุดมพรวิรัตน์",
+    "organization": "สภาการเหมืองแร่",
+    "role": "user",
+    "position": "เลขาธิการสภาการเหมืองแร่"
+  },
+  {
+    "username": "atmnp05",
+    "password": "pass69",
+    "name": "คุณสมหวัง วิทยาปัญญานนท์",
+    "organization": "สมาคมสินแร่และวัสดุก่อสร้าง",
+    "role": "user",
+    "position": "เลขาธิการสมาคมสินแร่และวัสดุก่อสร้าง"
+  },
+  {
+    "username": "atmnp06",
+    "password": "pass86",
+    "name": "รศ.ดร.พิษณุ บุณนวล ",
+    "organization": "สมาคมวิศวกรเหมืองแร่ไทย",
+    "role": "user",
+    "position": "นายกสมาคมวิศวกรเหมืองแร่ไทย"
+  },
+  {
+    "username": "atmnp07",
+    "password": "pass97",
+    "name": "คุณณัฐ สุขสงวน",
+    "organization": "หจก.บานชื่นไมนิ่ง",
+    "role": "user",
+    "position": "วิศวกรอิสระ"
+  },
+  {
+    "username": "atmnp08",
+    "password": "pass87",
+    "name": "คุณวิรเชษฐ์ สรรค์พฤกษ์สิน",
+    "organization": "หจก. จรัลรัตน์",
+    "role": "user",
+    "position": "หุ้นส่วนผู้จัดการ"
+  },
+  {
+    "username": "atmnp09",
+    "password": "pass96",
+    "name": "ศาสตราจารย์ ดร. จักรพันธ์ สุทธิรัตน์",
+    "organization": "จุฬาลงกรณ์มหาวิทยาลัย",
+    "role": "user",
+    "position": "ภาควิชาธรณีวิทยา "
+  },
+  {
+    "username": "atmnp10",
+    "password": "pass86",
+    "name": "รศ.ดร.ฐิติศักดิ์ บุญปราโมทย์ ",
+    "organization": "อิสระ",
+    "role": "user",
+    "position": "นักวิชาการด้านเศรษฐศาสตร์เหมืองแร่ "
+  },
+  {
+    "username": "atmnp11",
+    "password": "pass88",
+    "name": "ผศ.ดร. มนูญ มาศนิยม",
+    "organization": "มหาวิทยาลัยสงขลานครินทร์\nภาควิชาวิศวกรรมเหมืองแร่และวัสดุ",
+    "role": "user",
+    "position": ""
+  },
+  {
+    "username": "atmnp12",
+    "password": "pass15",
+    "name": "อ.ดร.ธีรยุทธ์ เพ็งสะอาด",
+    "organization": "",
+    "role": "user",
+    "position": ""
+  },
+  {
+    "username": "atmnp13",
+    "password": "pass60",
+    "name": "นางอุบล ฤทธิ์เพชร",
+    "organization": "กรมอุตสาหกรรมพื้นฐานและการเหมืองแร่",
+    "role": "user",
+    "position": "นิติกร (ที่ปรึกษากฎหมาย)"
+  },
+  {
+    "username": "atmnp14",
+    "password": "pass86",
+    "name": "นายสมเกียรติ เหลาโชติ",
+    "organization": "กรมอุตสาหกรรมพื้นฐานและการเหมืองแร่",
+    "role": "user",
+    "position": "นิติกรชำนาญการพิเศษ"
+  },
+  {
+    "username": "atmnp15",
+    "password": "pass84",
+    "name": "นายรชฎ มีตุวงศ์",
+    "organization": "กรมอุตสาหกรรมพื้นฐานและการเหมืองแร่",
+    "role": "user",
+    "position": "นักธรณีวิทยาชำนาญการพิเศษ"
+  },
+  {
+    "username": "atmnp16",
+    "password": "pass31",
+    "name": "นายนิพล แจ่มเหมือน",
+    "organization": "กรมอุตสาหกรรมพื้นฐานและการเหมืองแร่",
+    "role": "user",
+    "position": "ผู้อำนวยการกองกฎหมาย "
+  },
+  {
+    "username": "atmnp17",
+    "password": "pass87",
+    "name": "ดร.เกรียงศักดิ์ หล่อวัฒนตระกูล ",
+    "organization": "บริษัท สินแร่สาคร จำกัด",
+    "role": "user",
+    "position": "ประธานบริษัท สินแร่สาคร จำกัด"
+  },
+  {
+    "username": "atmnp18",
+    "password": "pass37",
+    "name": "นายพงษศักดิ์ วรินทร์",
+    "organization": "เอส เอส มินเนอร์รัล",
+    "role": "user",
+    "position": "ผอ สำรวจ วางแผนและประเมินศักยภาพแหล่งแร่"
+  },
+  {
+    "username": "atmnp19",
+    "password": "pass86",
+    "name": "นาย เอนก วงศ์ใหญ",
+    "organization": "เอส เอส มินเนอร์รัล",
+    "role": "user",
+    "position": "ผู้ช่วยกรรมการผู้จัดการฝ่ายสำรวจละพัฒนาแหล่งวัตถุดิบ"
+  },
+  {
+    "username": "atmnp20",
+    "password": "pass17",
+    "name": "นาย สุชาติ ตุ่นแก้ว",
+    "organization": "EGAT MAE MOH/ CENTER",
+    "role": "user",
+    "position": "ฝ่ายบริหารหรือ ฝ่ายธรณี และเสาะหาแหล่งแร่ "
+  },
+  {
+    "username": "atmnp21",
+    "password": "pass85",
+    "name": "คุณเอกกร ตันติอุโฆษกุล",
+    "organization": "ผาทองกรุ๊ป",
+    "role": "user",
+    "position": "ประธานกรรมการบริหาร"
+  }
+]

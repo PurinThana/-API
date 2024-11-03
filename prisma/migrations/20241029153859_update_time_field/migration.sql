@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Auction" ALTER COLUMN "time" SET DATA TYPE TEXT;
