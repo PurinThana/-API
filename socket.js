@@ -2,6 +2,7 @@
 
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
+let i = 0
 const socketHandler = (io) => {
     io.on('connection', (socket) => {
 
@@ -198,7 +199,8 @@ const socketHandler = (io) => {
         socket.on('res-data', async (data) => {
             try {
                 const { code, user_id } = data;
-
+                i += 1
+                console.log(i)
                 // ดึง auction_id โดยใช้ code
                 const auction = await prisma.auction.findFirst({
                     where: {
@@ -351,7 +353,8 @@ const socketHandler = (io) => {
                     data: {
                         current_price: auction.current_price + parseFloat(incrementAmount),
                         round: auction.round + 1,
-                        action_btn: "จับเวลา"
+                        action_btn: "จับเวลา",
+                        time: null
                     }
                 });
 
