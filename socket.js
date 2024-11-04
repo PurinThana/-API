@@ -447,6 +447,7 @@ const socketHandler = (io) => {
                             }
                         },
                         data: {
+                            status: "active",
                             isAllowed: true
                         }
                     })

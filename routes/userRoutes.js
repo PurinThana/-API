@@ -9,5 +9,7 @@ router.post('/users', userController.createUser);
 router.put('/users/:id', userController.updateUser);
 router.delete('/users/:id', userController.deleteUser);
 router.post('/users/create-many', userController.registerBulk)
+router.get('/users/auction/:id', userController.getUserByAuctionId)
+
 
 module.exports = router;

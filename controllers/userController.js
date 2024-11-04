@@ -31,6 +31,27 @@ const getUserById = async (req, res) => {
     }
 };
 
+// Get a single user by ID
+const getUserByAuctionId = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const user = await prisma.userAuction.findMany({
+            where: { auction_id: parseInt(id) },
+            include: {
+                user: true
+            }
+        });
+        if (user) {
+            res.json(user);
+        } else {
+            res.status(404).json({ message: 'User not found' });
+        }
+    } catch (error) {
+        console.error("Error fetching user:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+};
+
 // Create a new user
 const createUser = async (req, res) => {
     const { username, name, organization, role, password, position } = req.body;
@@ -123,5 +144,6 @@ module.exports = {
     createUser,
     updateUser,
     deleteUser,
-    registerBulk
+    registerBulk,
+    getUserByAuctionId
 };
