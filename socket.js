@@ -3,6 +3,34 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 let i = 0
+
+async function distributeValuesToUsers(min, max, users, increment, auction_id) {
+    const values = [];
+    // สร้างค่าที่เป็นไปได้จาก min ถึง max โดย increment
+    for (let i = min; i <= max; i += increment) {
+        values.push(i);
+    }
+
+    // ใช้ for...of เพื่อรองรับ async/await
+    for (const user of users) {
+        const randomIndex = Math.floor(Math.random() * values.length);
+        await prisma.userAuction.update({
+            where: {
+                user_id_auction_id: {
+                    user_id: parseInt(user.user_id),
+                    auction_id: parseInt(auction_id)
+                }
+            },
+            data: {
+                reserve_price: values[randomIndex]
+            }
+        });
+    }
+
+    return users;
+}
+
+
 const socketHandler = (io) => {
     io.on('connection', (socket) => {
 
@@ -175,7 +203,7 @@ const socketHandler = (io) => {
             }
         });
 
-        socket.on('start-auction', async ({ code }) => {
+        socket.on('start-auction', async ({ code, min, max, increment, users }) => {
             try {
                 const res = await prisma.auction.update({
                     where: {
@@ -186,10 +214,17 @@ const socketHandler = (io) => {
                         action_btn: "จับเวลา"
                     }
                 })
+                console.log(min, max, users, increment, res.id)
+
+                await distributeValuesToUsers(min, max, users, increment, res.id)
+
+
+
                 io.to(code).emit("auction-started", {
                     msg: "เริ่มการประมูล"
                 })
             } catch (err) {
+                console.log(err)
                 socket.emit('error', err)
             }
 
@@ -326,7 +361,7 @@ const socketHandler = (io) => {
         socket.on('next-round', async ({ inputType, inputValue, code }) => {
             try {
                 // Fetch the necessary data from the auction table
-                console.log("code", code)
+
                 const auction = await prisma.auction.findFirst({
                     where: { code },
                     select: { current_price: true, opening_price: true, round: true, id: true }
@@ -336,7 +371,7 @@ const socketHandler = (io) => {
                     throw new Error("Auction not found");
                 }
                 const auction_id = auction.id
-                console.log("first", auction_id)
+
                 // Define incrementAmount outside of the condition block
                 let incrementAmount;
 
@@ -357,6 +392,13 @@ const socketHandler = (io) => {
                         time: null
                     }
                 });
+
+                await prisma.log.create({
+                    data: {
+                        auction_id,
+                        message: `รอบถัดไปในราคา ${auction.current_price + parseFloat(incrementAmount)}`
+                    }
+                })
 
                 await prisma.userAuction.updateMany({
                     where: {

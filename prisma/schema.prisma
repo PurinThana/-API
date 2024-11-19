@@ -42,6 +42,7 @@ model User {
   organization  String?
   role          String?
   position      String?
+  
   password      String
   userAuctions  UserAuction[]    // Relation to UserAuction
    logs          Log[]
@@ -55,6 +56,7 @@ model UserAuction {
   status     AuctionStatus? // Use the enum type
   guest      Boolean @default(false)
   bid        Float?
+  reserve_price Float?
   auction    Auction @relation(fields: [auction_id], references: [id])
   auction_id Int
   user       User    @relation(fields: [user_id], references: [id])

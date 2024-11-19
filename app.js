@@ -5,9 +5,14 @@ const http = require('http');
 const { Server } = require('socket.io');
 const socketHandler = require('./socket'); // Import the socket handler
 require('dotenv').config()
+
+
 const userRoutes = require('./routes/userRoutes')
 const auctionRoutes = require('./routes/auctionRoutes')
 const authRoutes = require('./routes/authRoutes')
+const logRoutes = require('./routes/logRoutes')
+
+
 const app = express();
 const prisma = new PrismaClient();
 const server = http.createServer(app);
@@ -34,6 +39,7 @@ app.get("/", (req, res) => {
 app.use('/api', userRoutes);
 app.use('/api', auctionRoutes);
 app.use('/api', authRoutes);
+app.use('/api', logRoutes);
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
